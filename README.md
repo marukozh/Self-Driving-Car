@@ -55,12 +55,13 @@ ssh pi@ryanzotti.local
 
 I specialize in machine learning, not hardware, and this was my first time working with circuits. If you have prior circuitry experience and come across something I've done that doesn't make sense, go with your instinct because I could be wrong. I followed tutorials from here:
 
-* [Raspberry Pi motor circuitry](https://business.tutsplus.com/tutorials/controlling-dc-motors-using-python-with-a-raspberry-pi--cms-20051)
+* [Raspberry Pi motor circuitry](https://becominghuman.ai/building-self-driving-rc-car-series-2-hardware-setup-5e11eff3da3a)
+
 * [Raspberry Pi range sensor circuitry](https://www.modmypi.com/blog/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi)
 
 Note that you won't be able to follow the tutorials verbatim. One of the tutorials uses a Raspberry Pi 2 whereas I use a 3. The differences are not significant, so you should be able to figure it out. Both tutorials give much better explanations than I can, but if you're curious exactly how I did the wiring, see my diagram below. 
 
-<img width="321" alt="frame" src="https://user-images.githubusercontent.com/8901244/30244462-0e34e4be-9573-11e7-8ea8-81f1203c9492.png">
+<img width="321" alt="frame" src="https://cdn-images-1.medium.com/max/1600/1*p6nno-Ho8JjXWm1nond67Q.png">
 
 ## Data Collection
 
