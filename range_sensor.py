@@ -28,8 +28,8 @@ def calculate_distance(ECHO,TRIG):
 
 if __name__ == '__main__':
     GPIO.setmode(GPIO.BCM)
-    TRIG = 2
-    ECHO = 3
+    TRIG = 23
+    ECHO = 24
     GPIO.setup(TRIG, GPIO.OUT)
     GPIO.setup(ECHO, GPIO.IN)
     while True:
