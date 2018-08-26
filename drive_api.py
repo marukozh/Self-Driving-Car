@@ -1,5 +1,5 @@
 import argparse
-import tornado.ioloop
+from tornado import ioloop
 import tornado.web
 from datetime import datetime
 import os
@@ -236,4 +236,4 @@ if __name__ == "__main__":
     settings = {'speed':float(args['speed_percent'])}
     app = make_app(settings)
     app.listen(81)
-    tornado.ioloop.IOLoop.current().start()
+    ioloop.IOLoop.current().start()
