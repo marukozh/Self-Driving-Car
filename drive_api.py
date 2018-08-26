@@ -231,7 +231,7 @@ if __name__ == "__main__":
     ap.add_argument("-s", "--speed_percent", required=True, help="Between 0 and 100")
     args = vars(ap.parse_args())
     GPIO.setmode(GPIO.BOARD)
-    motor = Motor(16, 18, 22, 19, 21, 23)
+    motor = Motor(35, 37, 33, 36, 38, 40)
     log_entries = []
     settings = {'speed':float(args['speed_percent'])}
     app = make_app(settings)
