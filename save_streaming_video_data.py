@@ -14,9 +14,10 @@ host = args["host"]
 
 # First log into the raspberry pi, and then do these two things:
 # cd /usr/src/ffmpeg
+# sudo modprobe bcm2835-v4l2
 # sudo ffserver -f /etc/ffserver.conf & ffmpeg -v quiet -r 5 -s 320x240 -f video4linux2 -i /dev/video0 http://localhost:8090/webcam.ffm
 
-fourcc = cv2.cv.CV_FOURCC(*'XVID')(*'jpeg')
+fourcc = cv2.cv.CV_FOURCC(*'jpeg')
 out = cv2.VideoWriter('output.mov',fourcc, 20.0, (320,240))
 file_path = str(os.path.dirname(os.path.realpath(__file__)))+"/video_timestamps.txt"
 stream = urllib2.urlopen('http://{host}/webcam.mjpeg'.format(host=host))
@@ -34,7 +35,7 @@ while True:
         now = datetime.now()
         print(now)
         if frame is not None:
-          cv2.imshow("car camera", frame)
+          # cv2.imshow("car camera", frame)
 
           # Use the code below if I need find the dimensions of the video
           '''
