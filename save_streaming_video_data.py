@@ -1,12 +1,12 @@
 import argparse
 import cv2
-import urllib.request
+import urllib2
 import numpy as np
 from datetime import datetime
 import os
 
 
-# Example: python save_streaming_video_data.py --ip 192.168.1.82
+# Example: python save_streaming_video_data.py --host raspberrypi.local
 ap = argparse.ArgumentParser()
 ap.add_argument("--host", required=True, help="Raspberry Pi hostname or IP")
 args = vars(ap.parse_args())
@@ -19,7 +19,7 @@ host = args["host"]
 fourcc = cv2.VideoWriter_fourcc(*'jpeg')
 out = cv2.VideoWriter('output.mov',fourcc, 20.0, (320,240))
 file_path = str(os.path.dirname(os.path.realpath(__file__)))+"/video_timestamps.txt"
-stream = urllib.request.urlopen('http://{host}/webcam.mjpeg'.format(host=host))
+stream = urllib2.urlopen('http://{host}/webcam.mjpeg'.format(host=host))
 
 bytes = bytes()
 while True:
@@ -33,9 +33,9 @@ while True:
         #cv2.imshow('Car Camera', frame)
         now = datetime.now()
         print(now)
-        if frame is not None:   
+        if frame is not None:
           cv2.imshow("car camera", frame)
-          
+
           # Use the code below if I need find the dimensions of the video
           '''
           height, width, channels = frame.shape
